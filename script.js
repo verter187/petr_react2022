@@ -2,6 +2,13 @@
 
 // const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели!") || 0;
 
+// if (numberOfFilms < 10) {
+//   alert("Просмотрено мало фильмов.");
+// } else if (numberOfFilms >= 10 && numberOfFilms < 30) {
+//   alert("Вы классический зритель.");
+// } else {
+//   alert("Вы киноман.");
+// }
 // const personalMovieDB = {
 //   count: numberOfFilms,
 //   movies: {},
@@ -10,63 +17,63 @@
 //   private: false,
 // };
 
+// // while (true) {
+// //   let filmName = prompt("Один из последних просмотренных фильмов?");
+
+// //   if (!filmName || filmName.length > 50) {
+// //     continue;
+// //   }
+// //   let filmRating = prompt("На сколько оцените его?");
+// //   personalMovieDB.movies[filmName] = filmRating;
+// //   break;
+// // }
+
 // for (let i = 0; i < 2; i++) {
 //   let filmName = prompt("Один из последних просмотренных фильмов?"),
 //     filmRating = prompt("На сколько оцените его?");
+//   if (!filmName || !filmRating || filmName.length > 50) {
+//     i--;
+//     continue;
+//   }
 //   personalMovieDB.movies[filmName] = filmRating;
 // }
 
 // console.log(personalMovieDB);
-// let length = 0;
-// for (let i = 0; i < 6; i++) {
-//   length += 1;
 
-//   let result = "";
-//   for (let j = 0; j < length; j++) {
-//     result += "*";
-//   }
-//   console.log(result);
+// function returnNeighboringNumbers(num) {
+//   return (numbers = [num - 1, num, num + 1]);
 // }
 
-// let result = "";
-// const length = 7;
+// console.log(returnNeighboringNumbers(5));
 
-// for (let i = 1; i < length; i++) {
-//   for (let j = 0; j < i; j++) {
-//     result += "*";
+// function getMathResult(base, num) {
+//   if (typeof num === "string" || num <= 0) {
+//     return base;
 //   }
-
-//   result += "\n";
+//   let res = "",
+//     sum = 0;
+//   for (let i = 0; i < num; i++) {
+//     sum = sum + base;
+//     res = res + (res ? "---" : "") + String(sum);
+//   }
+//   return res;
 // }
 
-// console.log(result);
+// console.log(getMathResult(5, 3));
 
-// for (let i = ; i < 3; i++) {
-//   console.log(`First level: ${i}`);
-//   for (let j = 0; j < 3; j++) {
-//     console.log(`Second level: ${j}`);
-//     for (let k = 0; k < 3; k++) {
-//       console.log(`Third level: ${k}`);
-//     }
-//   }
-// }
+const arr = [1, 2, 3, , , , 7];
+arr[100] = 100;
+console.log(arr);
+const str = "test";
+console.log(str.indexOf("e"));
 
-const lines = 5;
-let result = "";
+const logg = "Hello world!";
+// console.log(logg.slice(6, 12));
+// console.log(logg.substring(6, 11));
+console.log(logg.substr(6, 5));
 
-let num = 1;
-for (let i = 0; i <= lines; i++) {
-  let space = "";
-  for (let j = lines - i; j > 0; j--) {
-    space += " ";
-  }
+const num = 12.2255;
+console.log(Math.round(num));
 
-  result += space;
-  for (let k = 0; k < num; k++) {
-    result += "*";
-  }
-  num += 2;
-
-  result += "\n";
-}
-console.log(result);
+const test = "12.2px";
+console.log(parseInt(test));
