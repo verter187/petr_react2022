@@ -1,79 +1,144 @@
 "use strict";
-const personalPlanPeter = {
-  name: "Peter",
-  age: "29",
-  skills: {
-    languages: ["ru", "eng"],
-    programmingLangs: {
-      js: "20%",
-      php: "10%",
-    },
-    exp: "1 month",
-  },
-  showAgeAndLangs(personalPlanPeter) {
-    return `Мне ${
-      personalPlanPeter.age
-    } и я владею языками: ${personalPlanPeter.skills.languages
-      .join(" ")
-      .toUpperCase()}`;
-  },
-};
-console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
 
-function showExperience({ skills: { exp } }) {
-  return exp;
-}
-// "Язык js изучен на 20% Язык php изучен на 10%"
-function showProgrammingLangs({ skills: { programmingLangs } }) {
-  let exp = "";
-  for (let key in programmingLangs) {
-    exp += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
-  }
+const students = [
+  "Peter",
+  "Andrew",
+  "Ann",
+  "Mark",
+  "Josh",
+  "Sandra",
+  "Cris",
+  "Bernard",
+  "Takesi",
+  "Sam",
+  "Somebody",
+];
 
-  return exp;
+function sortStudentsByGroups(arr) {
+  let newArr = arr.sort(),
+    team1 = newArr.slice(0, 3),
+    team2 = newArr.slice(3, 6),
+    team3 = newArr.slice(6, 9),
+    others = `Оставшиеся студенты: ${
+      newArr.slice(9).length ? newArr.slice(9).join(", ") : "-"
+    }`;
+  return [team1, team2, team3, others];
 }
 
-console.log(showProgrammingLangs(personalPlanPeter));
+console.log(sortStudentsByGroups(students));
+// const shoppingMallData = {
+//   shops: [
+//     {
+//       width: 10,
+//       length: 5,
+//     },
+//     {
+//       width: 15,
+//       length: 7,
+//     },
+//     {
+//       width: 20,
+//       length: 5,
+//     },
+//     {
+//       width: 8,
+//       length: 10,
+//     },
+//   ],
+//   height: 5,
+//   moneyPer1m3: 30,
+//   budget: 50000,
+// };
 
-const family = ["Peter", "Ann", "Alex", "Linda"];
+// function isBudgetEnough({ height, moneyPer1m3, budget, shops }) {
+//   let allShopsArea = shops.reduce(
+//     (accum, value) => (accum += value.width * value.length),
+//     0
+//   );
 
-function showFamily(arr) {
-  return arr.length ? `Семья состоит из: ${arr.join(" ")}` : "Семья пуста";
-  // 'Семья состоит из: Peter Ann Alex Linda'
-}
-console.log(showFamily([]));
+//   let allShoppingCenterArea = allShopsArea * height;
 
-const favoriteCities = ["liSBon", "ROME", "miLan", "Dublin"];
+//   let requiredBudget = allShoppingCenterArea * moneyPer1m3;
+//   return requiredBudget <= budget
+//     ? "Бюджета достаточно"
+//     : "Бюджета недостаточно";
+// }
 
-function standardizeStrings(arr) {
-  return arr.map((i) => i.toLowerCase()).join("\n");
-}
+// const personalPlanPeter = {
+//   name: "Peter",
+//   age: "29",
+//   skills: {
+//     languages: ["ru", "eng"],
+//     programmingLangs: {
+//       js: "20%",
+//       php: "10%",
+//     },
+//     exp: "1 month",
+//   },
+//   showAgeAndLangs(personalPlanPeter) {
+//     return `Мне ${
+//       personalPlanPeter.age
+//     } и я владею языками: ${personalPlanPeter.skills.languages
+//       .join(" ")
+//       .toUpperCase()}`;
+//   },
+// };
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
 
-console.log(standardizeStrings(favoriteCities));
+// function showExperience({ skills: { exp } }) {
+//   return exp;
+// }
+// // "Язык js изучен на 20% Язык php изучен на 10%"
+// function showProgrammingLangs({ skills: { programmingLangs } }) {
+//   let exp = "";
+//   for (let key in programmingLangs) {
+//     exp += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+//   }
 
-const someString = "This is some strange string";
+//   return exp;
+// }
 
-function reverse(str) {
-  return typeof str === "string"
-    ? str
-        .split(" ")
-        .reverse()
-        .map((i) => i.split("").reverse().join(""))
-        .join(" ")
-    : "Ошибка!";
-}
+// console.log(showProgrammingLangs(personalPlanPeter));
 
-console.log(reverse(7));
+// const family = ["Peter", "Ann", "Alex", "Linda"];
 
-const baseCurrencies = ["USD", "EUR"];
-const additionalCurrencies = ["UAH", "RUB", "CNY"];
+// function showFamily(arr) {
+//   return arr.length ? `Семья состоит из: ${arr.join(" ")}` : "Семья пуста";
+//   // 'Семья состоит из: Peter Ann Alex Linda'
+// }
+// console.log(showFamily([]));
 
-function availableCurr(arr, missingCurr) {
-  return arr.length
-    ? `Доступные валюты:\n${arr.filter((i) => i !== missingCurr).join("\n")}`
-    : "Нет доступных валют";
-}
-console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], "CNY"));
+// const favoriteCities = ["liSBon", "ROME", "miLan", "Dublin"];
+
+// function standardizeStrings(arr) {
+//   return arr.map((i) => i.toLowerCase()).join("\n");
+// }
+
+// console.log(standardizeStrings(favoriteCities));
+
+// const someString = "This is some strange string";
+
+// function reverse(str) {
+//   return typeof str === "string"
+//     ? str
+//         .split(" ")
+//         .reverse()
+//         .map((i) => i.split("").reverse().join(""))
+//         .join(" ")
+//     : "Ошибка!";
+// }
+
+// console.log(reverse(7));
+
+// const baseCurrencies = ["USD", "EUR"];
+// const additionalCurrencies = ["UAH", "RUB", "CNY"];
+
+// function availableCurr(arr, missingCurr) {
+//   return arr.length
+//     ? `Доступные валюты:\n${arr.filter((i) => i !== missingCurr).join("\n")}`
+//     : "Нет доступных валют";
+// }
+// console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], "CNY"));
 // Доступные валюты:
 // UAH
 // RUB
